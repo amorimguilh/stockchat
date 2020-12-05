@@ -17,8 +17,6 @@ namespace RabbitMqWorker
             Host.CreateDefaultBuilder(args)
                 .ConfigureServices((hostContext, services) =>
                 {
-                    //services.AddScoped<IStockFileInfoIntegration, StockFileInfoIntegration>();
-
                     var rabbitMqConf = hostContext.Configuration.GetSection("RabbitMq");
                     var factory = new ConnectionFactory
                     {
@@ -28,11 +26,13 @@ namespace RabbitMqWorker
                         Port = rabbitMqConf.GetValue<int>("port")
                     };
 
-                    var connection = factory.CreateConnection();
-                    services.AddSingleton(connection);
-                   
-
+                    var channel = factory.CreateConnection().CreateModel();
+                    services.AddSingleton(channel);
+                    
+                    services.AddScoped<IStockInfoIntegrationEndpoint, StockInfoIntegrationEndpoint>();
+                    services.AddScoped<IChatIntegrationEndpoint, ChatIntegrationEndpoint>();
                     services.AddSingleton<IQueueIntegration, RabbitMqIntegration>();
+
                     services.AddHostedService<Worker>();
                 });
     }

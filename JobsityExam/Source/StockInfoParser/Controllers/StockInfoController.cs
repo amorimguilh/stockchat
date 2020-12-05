@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using StockInfoAPI.Models;
 using StockInfoParserAPI.Exceptions;
 using StockInfoParserAPI.Integration;
 using System;
@@ -10,27 +11,28 @@ namespace JobsityExam.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class StockParserController : ControllerBase
+    public class StockInfoController : ControllerBase
     {
-        private readonly ILogger<StockParserController> _logger;
+        private readonly ILogger<StockInfoController> _logger;
         private readonly IQueueIntegration _queueIntegration;
         private readonly IStockFileInfoIntegration _stockInfoIntegration;
 
         private static readonly string closeValueHeaderDescription = "Close";
 
-        public StockParserController(
+        public StockInfoController(
             IQueueIntegration queueIntegration,
             IStockFileInfoIntegration stockInfoIntegration,
-            ILogger<StockParserController> logger)
+            ILogger<StockInfoController> logger)
         {
             _logger = logger;
             _stockInfoIntegration = stockInfoIntegration;
             _queueIntegration = queueIntegration;
         }
 
-        [HttpGet("{stock:minlength(1)}")]
-        public async Task Get(string stock)
+        [HttpPost]
+        public async Task Get([FromBody] stockInfoRequest stock)
         {
+            var stockName = stock.StockName;
             string message = string.Empty;
             
             try
@@ -38,18 +40,18 @@ namespace JobsityExam.Controllers
                 List<string> fileHeaders = null;
                 List<string> fileContent = null;
 
-                (fileHeaders, fileContent) = await _stockInfoIntegration.GetStockInfoFile(stock);
+                (fileHeaders, fileContent) = await _stockInfoIntegration.GetStockInfoFile(stockName);
 
                 var stockValueIndex = GetStockNameAndValueIndexes(fileHeaders);
 
                 ValidateHeadersAndColumnsQuantity(fileHeaders, fileContent);
 
-                message = GenerateMessage(stock, stockValueIndex, fileContent);
+                message = GenerateMessage(stockName, stockValueIndex, fileContent);
             }
             catch(Exception ex)
             {
                 _logger.LogError(ex.Message);
-                message = $"Unable to get {stock} stock information."; 
+                message = $"Unable to get {stockName} stock information."; 
             }
             finally
             {

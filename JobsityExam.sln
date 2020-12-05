@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StockInfoParserAPI", "JobsityExam\Source\StockInfoParser\StockInfoParserAPI.csproj", "{73F7C6BE-04EA-4F4A-9D23-E7C6FBD4DE2C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StockInfoAPI", "JobsityExam\Source\StockInfoParser\StockInfoAPI.csproj", "{73F7C6BE-04EA-4F4A-9D23-E7C6FBD4DE2C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{611C08C1-6F8E-4771-8AF3-2946D93721C0}"
 EndProject
@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StockInfoParser", "StockInf
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WorkerService", "WorkerService", "{DD0F5214-C551-40F7-8BF2-9A6A9614914C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMqWorker", "JobsityExam\Source\RabbitMqWorker\RabbitMqWorker.csproj", "{0DC13311-0D60-46C9-9ACC-37394D339B29}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitMqWorker", "JobsityExam\Source\RabbitMqWorker\RabbitMqWorker.csproj", "{0DC13311-0D60-46C9-9ACC-37394D339B29}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -35,7 +35,6 @@ C:\Pessoal\JobsityExam\JobsityExam\Source\RabbitMqWorker\bin\Debug\netcoreapp3.1
 C:\Pessoal\JobsityExam\JobsityExam\Source\RabbitMqWorker\bin\Debug\netcoreapp3.1\System.Diagnostics.EventLog.dll
 C:\Pessoal\JobsityExam\JobsityExam\Source\RabbitMqWorker\bin\Debug\netcoreapp3.1\System.Threading.Channels.dll
 C:\Pessoal\JobsityExam\JobsityExam\Source\RabbitMqWorker\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.EventLog.dll
-C:\Pessoal\JobsityExam\JobsityExam\Source\RabbitMqWorker\obj\Debug\netcoreapp3.1\RabbitMqWorker.csprojAssemblyReference.cache
 C:\Pessoal\JobsityExam\JobsityExam\Source\RabbitMqWorker\obj\Debug\netcoreapp3.1\RabbitMqWorker.AssemblyInfoInputs.cache
 C:\Pessoal\JobsityExam\JobsityExam\Source\RabbitMqWorker\obj\Debug\netcoreapp3.1\RabbitMqWorker.AssemblyInfo.cs
 C:\Pessoal\JobsityExam\JobsityExam\Source\RabbitMqWorker\obj\Debug\netcoreapp3.1\RabbitMqWorker.csproj.CoreCompileInputs.cache

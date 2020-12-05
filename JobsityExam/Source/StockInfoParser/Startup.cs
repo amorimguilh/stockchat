@@ -21,14 +21,16 @@ namespace JobsityExam
         public void ConfigureServices(IServiceCollection services)
         {
             var rabbitMqConf = Configuration.GetSection("RabbitMq");
-            services.AddSingleton<IConnectionFactory>(
-                new ConnectionFactory
-                {
-                    HostName = rabbitMqConf.GetValue<string>("host"),
-                    UserName = rabbitMqConf.GetValue<string>("username"),
-                    Password = rabbitMqConf.GetValue<string>("password"),
-                    Port = rabbitMqConf.GetValue<int>("port")
-                });
+            var factory = new ConnectionFactory
+            {
+                HostName = rabbitMqConf.GetValue<string>("host"),
+                UserName = rabbitMqConf.GetValue<string>("username"),
+                Password = rabbitMqConf.GetValue<string>("password"),
+                Port = rabbitMqConf.GetValue<int>("port")
+            };
+
+            var channel = factory.CreateConnection().CreateModel();
+            services.AddSingleton(channel);
 
             services.AddScoped<IStockFileInfoIntegration, StockFileInfoIntegration>();
             services.AddScoped<IQueueIntegration, RabbitMqIntegration>();

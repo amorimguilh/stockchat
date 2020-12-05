@@ -11,17 +11,17 @@ namespace StockInfoParserAPI.Tests
     [TestClass]
     public class StockParserControllerTests
     {
-        private readonly StockParserController _controller;
+        private readonly StockInfoController _controller;
         private readonly IQueueIntegration _queueIntegration;
         private readonly IStockFileInfoIntegration _stockFileInfoIntegration;
-        private readonly ILogger<StockParserController> _logger;
+        private readonly ILogger<StockInfoController> _logger;
 
         public StockParserControllerTests()
         {
             _stockFileInfoIntegration = Mock.Create<IStockFileInfoIntegration>();
             _queueIntegration = Mock.Create<IQueueIntegration>();
-            _logger = Mock.Create<ILogger<StockParserController>>();
-            _controller = new StockParserController(_queueIntegration, _stockFileInfoIntegration, _logger);
+            _logger = Mock.Create<ILogger<StockInfoController>>();
+            _controller = new StockInfoController(_queueIntegration, _stockFileInfoIntegration, _logger);
 
             // Prevent any posts in RabbitMq
             Mock.Arrange(() => _queueIntegration.PostMessage(Arg.AnyString)).DoInstead(() => { });
@@ -61,7 +61,7 @@ namespace StockInfoParserAPI.Tests
             Mock.Arrange(() => _stockFileInfoIntegration.GetStockInfoFile(Arg.AnyString)).TaskResult((header, stockInfo));
 
             // Call
-            await _controller.Get(stockName);
+            await _controller.Get(new StockInfoAPI.Models.stockInfoRequest {StockName = stockName } );
             var timesCalled = Mock.GetTimesCalled(() => _queueIntegration.PostMessage(expectedMessage));
 
             // Assert
@@ -102,7 +102,7 @@ namespace StockInfoParserAPI.Tests
             Mock.Arrange(() => _stockFileInfoIntegration.GetStockInfoFile(Arg.AnyString)).TaskResult((header, stockInfo));
 
             // Call
-            await _controller.Get(stockName);
+            await _controller.Get(new StockInfoAPI.Models.stockInfoRequest { StockName = stockName });
             var timesCalled = Mock.GetTimesCalled(() => _queueIntegration.PostMessage(expectedMessage));
 
             // Assert
@@ -143,7 +143,7 @@ namespace StockInfoParserAPI.Tests
             Mock.Arrange(() => _stockFileInfoIntegration.GetStockInfoFile(Arg.AnyString)).Throws(new System.Exception());
 
             // Call
-            await _controller.Get(stockName);
+            await _controller.Get(new StockInfoAPI.Models.stockInfoRequest { StockName = stockName });
             var timesCalled = Mock.GetTimesCalled(() => _queueIntegration.PostMessage(expectedMessage));
 
             // Assert
@@ -184,7 +184,7 @@ namespace StockInfoParserAPI.Tests
             Mock.Arrange(() => _stockFileInfoIntegration.GetStockInfoFile(Arg.AnyString)).Throws(new System.Exception());
 
             // Call
-            await _controller.Get(stockName);
+            await _controller.Get(new StockInfoAPI.Models.stockInfoRequest { StockName = stockName });
             var timesCalled = Mock.GetTimesCalled(() => _queueIntegration.PostMessage(expectedMessage));
 
             // Assert
@@ -224,7 +224,7 @@ namespace StockInfoParserAPI.Tests
             Mock.Arrange(() => _stockFileInfoIntegration.GetStockInfoFile(Arg.AnyString)).Throws(new System.Exception());
 
             // Call
-            await _controller.Get(stockName);
+            await _controller.Get(new StockInfoAPI.Models.stockInfoRequest { StockName = stockName });
             var timesCalled = Mock.GetTimesCalled(() => _queueIntegration.PostMessage(expectedMessage));
 
             // Assert
@@ -265,7 +265,7 @@ namespace StockInfoParserAPI.Tests
             Mock.Arrange(() => _stockFileInfoIntegration.GetStockInfoFile(Arg.AnyString)).TaskResult((header, stockInfo));
 
             // Call
-            await _controller.Get(stockName);
+            await _controller.Get(new StockInfoAPI.Models.stockInfoRequest { StockName = stockName });
             var timesCalled = Mock.GetTimesCalled(() => _queueIntegration.PostMessage(expectedMessage));
 
             // Assert

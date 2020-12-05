@@ -1,36 +1,34 @@
-﻿using RabbitMQ.Client;
+﻿using Microsoft.Extensions.DependencyInjection;
+using RabbitMQ.Client;
+using System;
 using System.Text;
 
 namespace StockInfoParserAPI.Integration
 {
     public class RabbitMqIntegration : IQueueIntegration
     {
-        private readonly IConnectionFactory _factory;
-        private readonly static string _defaultQueue = "stock_quote_queue2";
+        private readonly IModel _channel;
         
-        public RabbitMqIntegration(IConnectionFactory factory)
-        {
-            _factory = factory;
-        }
+        private readonly static string post_chat_queue = "post_chat_queue";
 
-        public void PostMessage(string message)
+        public RabbitMqIntegration(IModel channel)
         {
-            using (var connection = _factory.CreateConnection())
-            using (var channel = connection.CreateModel())
-            {
-                channel.QueueDeclareNoWait(queue: _defaultQueue,
+            _channel = channel;
+            _channel.QueueDeclareNoWait(queue: post_chat_queue,
                                      durable: false,
                                      exclusive: false,
                                      autoDelete: false,
                                      arguments: null);
+        }
 
-                var body = Encoding.UTF8.GetBytes(message);
+        public void PostMessage(string message)
+        {
+            var body = Encoding.UTF8.GetBytes(message);
 
-                channel.BasicPublish(exchange: string.Empty,
-                                    routingKey: _defaultQueue,
-                                    basicProperties: null,
-                                    body: body);
-            }
+            _channel.BasicPublish(exchange: string.Empty,
+                                routingKey: post_chat_queue,
+                                basicProperties: null,
+                                body: body);
         }
     }
 }

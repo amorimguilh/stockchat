@@ -1,7 +1,7 @@
 C:\Pessoal\JobsityExam\JobsityExam\Tests\StockInfoAPITests\bin\Debug\netcoreapp3.1\testhost.dll
 C:\Pessoal\JobsityExam\JobsityExam\Tests\StockInfoAPITests\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Pessoal\JobsityExam\JobsityExam\Tests\StockInfoAPITests\bin\Debug\netcoreapp3.1\appsettings.json
-C:\Pessoal\JobsityExam\JobsityExam\Tests\StockInfoAPITests\bin\Debug\netcoreapp3.1\StockInfoParserAPI.exe
+C:\Pessoal\JobsityExam\JobsityExam\Tests\StockInfoAPITests\bin\Debug\netcoreapp3.1\StockInfoAPI.exe
 C:\Pessoal\JobsityExam\JobsityExam\Tests\StockInfoAPITests\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
 C:\Pessoal\JobsityExam\JobsityExam\Tests\StockInfoAPITests\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
 C:\Pessoal\JobsityExam\JobsityExam\Tests\StockInfoAPITests\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
@@ -91,8 +91,8 @@ C:\Pessoal\JobsityExam\JobsityExam\Tests\StockInfoAPITests\bin\Debug\netcoreapp3
 C:\Pessoal\JobsityExam\JobsityExam\Tests\StockInfoAPITests\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
 C:\Pessoal\JobsityExam\JobsityExam\Tests\StockInfoAPITests\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
 C:\Pessoal\JobsityExam\JobsityExam\Tests\StockInfoAPITests\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-C:\Pessoal\JobsityExam\JobsityExam\Tests\StockInfoAPITests\bin\Debug\netcoreapp3.1\StockInfoParserAPI.dll
-C:\Pessoal\JobsityExam\JobsityExam\Tests\StockInfoAPITests\bin\Debug\netcoreapp3.1\StockInfoParserAPI.pdb
+C:\Pessoal\JobsityExam\JobsityExam\Tests\StockInfoAPITests\bin\Debug\netcoreapp3.1\StockInfoAPI.dll
+C:\Pessoal\JobsityExam\JobsityExam\Tests\StockInfoAPITests\bin\Debug\netcoreapp3.1\StockInfoAPI.pdb
 C:\Pessoal\JobsityExam\JobsityExam\Tests\StockInfoAPITests\obj\Debug\netcoreapp3.1\StockInfoAPITests.csprojAssemblyReference.cache
 C:\Pessoal\JobsityExam\JobsityExam\Tests\StockInfoAPITests\obj\Debug\netcoreapp3.1\StockInfoAPITests.AssemblyInfoInputs.cache
 C:\Pessoal\JobsityExam\JobsityExam\Tests\StockInfoAPITests\obj\Debug\netcoreapp3.1\StockInfoAPITests.AssemblyInfo.cs
