@@ -6,8 +6,8 @@ namespace StockInfoParserAPI.Integration
     public class RabbitMqIntegration : IQueueIntegration
     {
         private readonly IConnectionFactory _factory;
-        private readonly static string _defaultQueue = "stock_quote_queue";
-
+        private readonly static string _defaultQueue = "stock_quote_queue2";
+        
         public RabbitMqIntegration(IConnectionFactory factory)
         {
             _factory = factory;

@@ -42,7 +42,7 @@ namespace JobsityExam
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            
             app.UseHttpsRedirection();
 
             app.UseRouting();
