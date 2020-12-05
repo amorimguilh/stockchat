@@ -115,11 +115,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Pessoal\\JobsityExam\\JobsityExam\\Source\\StockInfoParserAPI.csproj",
+      "projectUniqueName": "C:\\Pessoal\\JobsityExam\\JobsityExam\\Source\\StockInfoParser\\StockInfoParserAPI.csproj",
       "projectName": "StockInfoParserAPI",
-      "projectPath": "C:\\Pessoal\\JobsityExam\\JobsityExam\\Source\\StockInfoParserAPI.csproj",
+      "projectPath": "C:\\Pessoal\\JobsityExam\\JobsityExam\\Source\\StockInfoParser\\StockInfoParserAPI.csproj",
       "packagesPath": "C:\\Users\\gamorim\\.nuget\\packages\\",
-      "outputPath": "C:\\Pessoal\\JobsityExam\\JobsityExam\\Source\\obj\\",
+      "outputPath": "C:\\Pessoal\\JobsityExam\\JobsityExam\\Source\\StockInfoParser\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

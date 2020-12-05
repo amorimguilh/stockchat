@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "irOraCDx4JJR5/+P6ED8QL8LAZYDvMVapJc2zAyf2er9VwMMW2vExucdVTooWy+Jfj/+Yac17FMrpgRXUxi9vA==",
+  "dgSpecHash": "t9NkguK/5+u8N6i3VWK5ovqwP+xbsjQODxzuN+g0bi7/V22DFhpfFA+4/6TSUQN+bn04gGBphCm+t8XDaVKPJQ==",
   "success": true,
-  "projectFilePath": "C:\\Pessoal\\JobsityExam\\JobsityExam\\Source\\StockInfoParserAPI.csproj",
+  "projectFilePath": "C:\\Pessoal\\JobsityExam\\JobsityExam\\Source\\StockInfoParser\\StockInfoParserAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gamorim\\.nuget\\packages\\rabbitmq.client\\6.2.1\\rabbitmq.client.6.2.1.nupkg.sha512",
     "C:\\Users\\gamorim\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",

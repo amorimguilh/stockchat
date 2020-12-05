@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Source\StockInfoParserAPI.csproj" />
+    <ProjectReference Include="..\..\Source\StockInfoParser\StockInfoParserAPI.csproj" />
   </ItemGroup>
 
 </Project>

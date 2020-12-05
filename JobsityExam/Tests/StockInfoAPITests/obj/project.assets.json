@@ -5950,8 +5950,8 @@
     },
     "StockInfoParserAPI/1.0.0": {
       "type": "project",
-      "path": "../../Source/StockInfoParserAPI.csproj",
-      "msbuildProject": "../../Source/StockInfoParserAPI.csproj"
+      "path": "../../Source/StockInfoParser/StockInfoParserAPI.csproj",
+      "msbuildProject": "../../Source/StockInfoParser/StockInfoParserAPI.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -5995,8 +5995,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Pessoal\\JobsityExam\\JobsityExam\\Source\\StockInfoParserAPI.csproj": {
-              "projectPath": "C:\\Pessoal\\JobsityExam\\JobsityExam\\Source\\StockInfoParserAPI.csproj"
+            "C:\\Pessoal\\JobsityExam\\JobsityExam\\Source\\StockInfoParser\\StockInfoParserAPI.csproj": {
+              "projectPath": "C:\\Pessoal\\JobsityExam\\JobsityExam\\Source\\StockInfoParser\\StockInfoParserAPI.csproj"
             }
           }
         }
