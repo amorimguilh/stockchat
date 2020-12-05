@@ -1,24 +1,25 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using StockInfoParserAPI.Exceptions;
 using StockInfoParserAPI.Integration;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace JobsityExam.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class StockParserController : ControllerBase
     {
         private readonly ILogger<StockParserController> _logger;
         private readonly IQueueIntegration _queueIntegration;
-        private static readonly string url = "https://stooq.com/q/l/?s=aapl.us&f=sd2t2ohlcv&h&e=csv";
+        private static readonly string url = "https://stooq.com/q/l/?s={0}&f=sd2t2ohlcv&h&e=csv";
         private static readonly char splitCharacter = ',';
-        private static readonly string symbolHeaderDescription = "Symbol";
         private static readonly string closeValueHeaderDescription = "Close";
 
         public StockParserController(
@@ -29,45 +30,75 @@ namespace JobsityExam.Controllers
             _queueIntegration = queueIntegration;
         }
 
-        [HttpGet]
-        public async Task Get()
+        [HttpGet("{stock:minlength(1)}")]
+        public async Task Get(string stock)
         {
-            using (var client = new HttpClient())
+            string message = string.Empty;
+            
+            try
             {
-                using (var response = await client.GetAsync(url))
+                using (var client = new HttpClient())
+                using (var response = await client.GetAsync(string.Format(url, stock)))
                 using (var fileStream = await response.Content.ReadAsStreamAsync())
+                using (var reader = new StreamReader(fileStream))
                 {
-                    if (fileStream.CanRead)
+                    if (!reader.EndOfStream)
                     {
-                        using (var reader = new StreamReader(fileStream))
-                        {
-                            if(!reader.EndOfStream)
-                            {
-                                var fileHeaders = reader.ReadLine().Split(splitCharacter);
-                                var fileContent = reader.ReadLine().Split(splitCharacter);
+                        var fileHeaders = reader.ReadLine().Split(splitCharacter).ToList();
 
-                                if(fileHeaders.Length == fileContent.Length)
-                                {
-                                    // throw Exception - number of headers and columns does no match
-                                }
+                        var stockValueIndex = GetStockNameAndValueIndexes(fileHeaders);
 
-                                var fileHeadersList = fileHeaders.ToList();
-                                fileHeaders = null;
+                        var fileContent = reader.ReadLine().Split(splitCharacter);
 
-                                var stockNameIndex = fileHeadersList.IndexOf(symbolHeaderDescription);
-                                var stockValueIndex = fileHeadersList.IndexOf(closeValueHeaderDescription);
+                        ValidateHeadersAndColumnsQuantity(fileHeaders, fileContent);
 
-                                //Not found indexes
-                                if(stockNameIndex == -1 || stockValueIndex == -1)
-                                {
-                                    // throw Exception - not found required indexes
-                                }
-
-                                _queueIntegration.PostMessage($"{fileContent[stockNameIndex]} quote is ${fileContent[stockValueIndex]} per share");
-                            }
-                        }
+                        message = GenerateMessage(stock, stockValueIndex, fileContent);
                     }
                 }
+            }
+            catch(Exception)
+            {
+                message = $"Unable to get {stock} stock information."; 
+            }
+            finally
+            {
+                _queueIntegration.PostMessage(message);
+            }
+        }
+
+        private static string GenerateMessage(string stock, int stockValueIndex, string[] fileContent)
+        {
+            var stockValue = -1f;
+            if (float.TryParse(fileContent[stockValueIndex], out stockValue))
+            {
+                return $"{stock} quote is ${stockValue} per share.";
+            }
+
+            return $"{stock} was not found. Please check the entire name of the stock, most stock names end with '.US'";
+        }
+
+        private static int GetStockNameAndValueIndexes(List<string> fileHeaders)
+        {
+            var stockValueIndex = fileHeaders.IndexOf(closeValueHeaderDescription);
+
+            ValidateIndexes(stockValueIndex);
+
+            return stockValueIndex;
+        }
+
+        private static void ValidateHeadersAndColumnsQuantity(List<string> fileHeaders, string[] fileContent)
+        {
+            if (fileHeaders.Count != fileContent.Length)
+            {
+                throw new HeadersColumnsLengthMismatchException();
+            }
+        }
+
+        private static void ValidateIndexes(int stockValueIndex)
+        {
+            if (stockValueIndex == -1)
+            {
+                throw new NotValidIndexException();
             }
         }
     }

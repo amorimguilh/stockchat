@@ -8,9 +8,9 @@ namespace StockInfoParserAPI.Integration
         private readonly IConnectionFactory _factory;
         private readonly static string _defaultQueue = "stock_quote_queue";
 
-        public RabbitMqIntegration(string hostName, string userName, string password, int port = 5672)
+        public RabbitMqIntegration(IConnectionFactory factory)
         {
-            _factory = new ConnectionFactory { HostName = hostName, UserName = userName, Password = password, Port = port };
+            _factory = factory;
         }
 
         public void PostMessage(string message)

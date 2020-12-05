@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using RabbitMQ.Client;
 using StockInfoParserAPI.Integration;
 
 namespace JobsityExam
@@ -20,12 +21,16 @@ namespace JobsityExam
         public void ConfigureServices(IServiceCollection services)
         {
             var rabbitMqConf = Configuration.GetSection("RabbitMq");
-            services.AddSingleton<IQueueIntegration>(
-                new RabbitMqIntegration(
-                    rabbitMqConf.GetValue<string>("host"),
-                    rabbitMqConf.GetValue<string>("username"),
-                    rabbitMqConf.GetValue<string>("password")));
+            services.AddSingleton<IConnectionFactory>(
+                new ConnectionFactory
+                {
+                    HostName = rabbitMqConf.GetValue<string>("host"),
+                    UserName = rabbitMqConf.GetValue<string>("username"),
+                    Password = rabbitMqConf.GetValue<string>("password"),
+                    Port = rabbitMqConf.GetValue<int>("port")
+                });
 
+            services.AddScoped<IQueueIntegration, RabbitMqIntegration>();
             services.AddControllers();
         }
 
