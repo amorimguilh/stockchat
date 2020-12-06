@@ -4,14 +4,14 @@
     "C:\\Pessoal\\JobsityExam\\JobsityExam\\Tests\\StockInfoAPITests\\StockInfoAPITests.csproj": {}
   },
   "projects": {
-    "C:\\Pessoal\\JobsityExam\\JobsityExam\\Source\\StockInfoParser\\StockInfoAPI.csproj": {
+    "C:\\Pessoal\\JobsityExam\\JobsityExam\\Source\\StockConsumer\\StockConsumer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Pessoal\\JobsityExam\\JobsityExam\\Source\\StockInfoParser\\StockInfoAPI.csproj",
-        "projectName": "StockInfoAPI",
-        "projectPath": "C:\\Pessoal\\JobsityExam\\JobsityExam\\Source\\StockInfoParser\\StockInfoAPI.csproj",
+        "projectUniqueName": "C:\\Pessoal\\JobsityExam\\JobsityExam\\Source\\StockConsumer\\StockConsumer.csproj",
+        "projectName": "StockConsumer",
+        "projectPath": "C:\\Pessoal\\JobsityExam\\JobsityExam\\Source\\StockConsumer\\StockConsumer.csproj",
         "packagesPath": "C:\\Users\\gamorim\\.nuget\\packages\\",
-        "outputPath": "C:\\Pessoal\\JobsityExam\\JobsityExam\\Source\\StockInfoParser\\obj\\",
+        "outputPath": "C:\\Pessoal\\JobsityExam\\JobsityExam\\Source\\StockConsumer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -43,6 +43,10 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.10.9, )"
+            },
             "RabbitMQ.Client": {
               "target": "Package",
               "version": "[6.2.1, )"
@@ -97,8 +101,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Pessoal\\JobsityExam\\JobsityExam\\Source\\StockInfoParser\\StockInfoAPI.csproj": {
-                "projectPath": "C:\\Pessoal\\JobsityExam\\JobsityExam\\Source\\StockInfoParser\\StockInfoAPI.csproj"
+              "C:\\Pessoal\\JobsityExam\\JobsityExam\\Source\\StockConsumer\\StockConsumer.csproj": {
+                "projectPath": "C:\\Pessoal\\JobsityExam\\JobsityExam\\Source\\StockConsumer\\StockConsumer.csproj"
               }
             }
           }

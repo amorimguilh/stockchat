@@ -1,0 +1,34 @@
+version: '3.4'
+
+networks:
+  exam-network:
+    driver: bridge
+    
+services:
+  rabbit:
+    image: rabbitmq:3-management
+    container_name: rabbit
+    hostname: rabbit
+    environment:
+        RABBITMQ_DEFAULT_USER: user
+        RABBITMQ_DEFAULT_PASS: mysecretpassword
+    ports:
+    - "15672:15672"    
+    networks:
+      - exam-network
+    
+  stockconsumer:
+    image: gamorim/stockconsumer
+    container_name: stockconsumer
+    restart: on-failure
+    depends_on:
+      - rabbit
+    build:
+      context: ./StockConsumer
+      dockerfile: Dockerfile
+    environment:
+      RABBIT_MQ_HOST: rabbit
+    ports:
+      - "5001:80"
+    networks:
+      - exam-network  

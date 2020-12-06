@@ -3,19 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StockInfoAPI", "JobsityExam\Source\StockInfoParser\StockInfoAPI.csproj", "{73F7C6BE-04EA-4F4A-9D23-E7C6FBD4DE2C}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{611C08C1-6F8E-4771-8AF3-2946D93721C0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{894400DB-0BA2-4FD9-AB51-8942CAECBB96}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StockInfoAPITests", "JobsityExam\Tests\StockInfoAPITests\StockInfoAPITests.csproj", "{79BD641C-7750-400E-B0D0-64E43E42FC50}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StockInfoParser", "StockInfoParser", "{7E154712-039F-433D-BFC3-C173BB2FE78A}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WorkerService", "WorkerService", "{DD0F5214-C551-40F7-8BF2-9A6A9614914C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitMqWorker", "JobsityExam\Source\RabbitMqWorker\RabbitMqWorker.csproj", "{0DC13311-0D60-46C9-9ACC-37394D339B29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockConsumer", "JobsityExam\Source\StockConsumer\StockConsumer.csproj", "{802C6F46-7274-42C0-9F5A-AB9E00AC9992}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{73F7C6BE-04EA-4F4A-9D23-E7C6FBD4DE2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{73F7C6BE-04EA-4F4A-9D23-E7C6FBD4DE2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{73F7C6BE-04EA-4F4A-9D23-E7C6FBD4DE2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{73F7C6BE-04EA-4F4A-9D23-E7C6FBD4DE2C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{79BD641C-7750-400E-B0D0-64E43E42FC50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{79BD641C-7750-400E-B0D0-64E43E42FC50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79BD641C-7750-400E-B0D0-64E43E42FC50}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -35,16 +29,19 @@ Global
 		{0DC13311-0D60-46C9-9ACC-37394D339B29}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DC13311-0D60-46C9-9ACC-37394D339B29}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DC13311-0D60-46C9-9ACC-37394D339B29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{802C6F46-7274-42C0-9F5A-AB9E00AC9992}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{802C6F46-7274-42C0-9F5A-AB9E00AC9992}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{802C6F46-7274-42C0-9F5A-AB9E00AC9992}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{802C6F46-7274-42C0-9F5A-AB9E00AC9992}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{73F7C6BE-04EA-4F4A-9D23-E7C6FBD4DE2C} = {7E154712-039F-433D-BFC3-C173BB2FE78A}
 		{79BD641C-7750-400E-B0D0-64E43E42FC50} = {894400DB-0BA2-4FD9-AB51-8942CAECBB96}
-		{7E154712-039F-433D-BFC3-C173BB2FE78A} = {611C08C1-6F8E-4771-8AF3-2946D93721C0}
 		{DD0F5214-C551-40F7-8BF2-9A6A9614914C} = {611C08C1-6F8E-4771-8AF3-2946D93721C0}
 		{0DC13311-0D60-46C9-9ACC-37394D339B29} = {DD0F5214-C551-40F7-8BF2-9A6A9614914C}
+		{802C6F46-7274-42C0-9F5A-AB9E00AC9992} = {611C08C1-6F8E-4771-8AF3-2946D93721C0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {ACA40BC7-0559-440F-8012-D7A3BE39ACA7}
