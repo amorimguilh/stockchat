@@ -33,3 +33,18 @@ services:
       - "5001:80"
     networks:
       - exam-network  
+  
+  rabbitmqworker:
+    image: gamorim/rabbitmqworker
+    container_name: rabbitmqworker
+    restart: on-failure
+    depends_on:
+      - rabbit
+      - stockconsumer
+    build:
+      context: ./RabbitMqWorker
+      dockerfile: Dockerfile
+    environment:
+      RABBIT_MQ_HOST: rabbit
+    networks:
+      - exam-network  

@@ -1,0 +1,16 @@
+C:\app\build\appsettings.Development.json
+C:\app\build\appsettings.json
+C:\app\build\RabbitMqWorker.exe
+C:\app\build\RabbitMqWorker.deps.json
+C:\app\build\RabbitMqWorker.runtimeconfig.json
+C:\app\build\RabbitMqWorker.runtimeconfig.dev.json
+C:\app\build\RabbitMqWorker.dll
+C:\app\build\RabbitMqWorker.pdb
+C:\Pessoal\JobsityExam\JobsityExam\Source\RabbitMqWorker\obj\Release\netcoreapp3.1\RabbitMqWorker.csprojAssemblyReference.cache
+C:\Pessoal\JobsityExam\JobsityExam\Source\RabbitMqWorker\obj\Release\netcoreapp3.1\RabbitMqWorker.AssemblyInfoInputs.cache
+C:\Pessoal\JobsityExam\JobsityExam\Source\RabbitMqWorker\obj\Release\netcoreapp3.1\RabbitMqWorker.AssemblyInfo.cs
+C:\Pessoal\JobsityExam\JobsityExam\Source\RabbitMqWorker\obj\Release\netcoreapp3.1\RabbitMqWorker.csproj.CoreCompileInputs.cache
+C:\Pessoal\JobsityExam\JobsityExam\Source\RabbitMqWorker\obj\Release\netcoreapp3.1\RabbitMqWorker.csproj.CopyComplete
+C:\Pessoal\JobsityExam\JobsityExam\Source\RabbitMqWorker\obj\Release\netcoreapp3.1\RabbitMqWorker.dll
+C:\Pessoal\JobsityExam\JobsityExam\Source\RabbitMqWorker\obj\Release\netcoreapp3.1\RabbitMqWorker.pdb
+C:\Pessoal\JobsityExam\JobsityExam\Source\RabbitMqWorker\obj\Release\netcoreapp3.1\RabbitMqWorker.genruntimeconfig.cache

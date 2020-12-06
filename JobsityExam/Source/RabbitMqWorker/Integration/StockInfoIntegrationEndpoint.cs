@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
+using RabbitMqWorker.Models;
 using System;
 using System.Net.Http;
 using System.Text;
@@ -8,7 +10,7 @@ namespace RabbitMqWorker.Integration
 {
     public class StockInfoIntegrationEndpoint : IStockInfoIntegrationEndpoint
     {
-        private static readonly string _endpointUri = "http://stockconsumer:5001/api/stockconsumer";
+        private static readonly string _endpointUri = "http://stockconsumer/api/stockconsumer";
         private readonly ILogger<StockInfoIntegrationEndpoint> _logger;
 
         public StockInfoIntegrationEndpoint(ILogger<StockInfoIntegrationEndpoint> logger)
@@ -29,7 +31,11 @@ namespace RabbitMqWorker.Integration
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri(_endpointUri);
-                var stringContent = new StringContent(stockName.Replace(" ", String.Empty), Encoding.UTF8, "application/json");
+                var jsonObject = JsonConvert.SerializeObject(new StockConsumerRequest
+                {
+                    StockName = stockName.Replace(" ", String.Empty)
+                });
+                var stringContent = new StringContent(jsonObject, Encoding.UTF8, "application/json");
                 var result = await client.PostAsync(string.Empty, stringContent);
             }
         }

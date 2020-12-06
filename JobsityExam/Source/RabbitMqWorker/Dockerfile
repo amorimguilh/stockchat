@@ -5,10 +5,10 @@ WORKDIR /app
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
-COPY ["JobsityExam/Source/RabbitMqWorker/RabbitMqWorker.csproj", "JobsityExam/Source/RabbitMqWorker/"]
-RUN dotnet restore "JobsityExam/Source/RabbitMqWorker/RabbitMqWorker.csproj"
+COPY *.csproj ./
+RUN dotnet restore
 COPY . .
-WORKDIR "/src/JobsityExam/Source/RabbitMqWorker"
+WORKDIR "/src/."
 RUN dotnet build "RabbitMqWorker.csproj" -c Release -o /app/build
 
 FROM build AS publish

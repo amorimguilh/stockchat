@@ -19,9 +19,9 @@ namespace RabbitMqWorker
             Host.CreateDefaultBuilder(args)
                 .ConfigureServices((hostContext, services) =>
                 {
-                    var envVariable = "localhost:5672";//Environment.GetEnvironmentVariable("RABBIT_MQ_HOST");
+                    var envVariable = Environment.GetEnvironmentVariable("RABBIT_MQ_HOST");
 
-                    //Thread.Sleep(8000);
+                    Thread.Sleep(8000);
 
                     var factory = new ConnectionFactory()
                     {
