@@ -8,7 +8,7 @@ namespace RabbitMqWorker.Integration
 {
     public class ChatIntegrationEndpoint : IChatIntegrationEndpoint
     {
-        private static readonly string _endpointUri = "https://localhost:44382/api/postmessage"; //change localhost to environment variable
+        private static readonly string _endpointUri = "http://localhost:44382/api/postmessage"; //change localhost to environment variable
         private readonly ILogger<ChatIntegrationEndpoint> _logger;
         
         public ChatIntegrationEndpoint(ILogger<ChatIntegrationEndpoint> logger)

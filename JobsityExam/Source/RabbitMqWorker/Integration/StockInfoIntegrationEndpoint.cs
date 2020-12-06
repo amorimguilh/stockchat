@@ -8,7 +8,7 @@ namespace RabbitMqWorker.Integration
 {
     public class StockInfoIntegrationEndpoint : IStockInfoIntegrationEndpoint
     {
-        private static readonly string _endpointUri = "https://localhost:44382/api/stockinfo";
+        private static readonly string _endpointUri = "http://stockconsumer:5001/api/stockconsumer";
         private readonly ILogger<StockInfoIntegrationEndpoint> _logger;
 
         public StockInfoIntegrationEndpoint(ILogger<StockInfoIntegrationEndpoint> logger)
@@ -30,7 +30,7 @@ namespace RabbitMqWorker.Integration
             {
                 client.BaseAddress = new Uri(_endpointUri);
                 var stringContent = new StringContent(stockName.Replace(" ", String.Empty), Encoding.UTF8, "application/json");
-                client.PostAsync(string.Empty, stringContent);
+                var result = await client.PostAsync(string.Empty, stringContent);
             }
         }
     }

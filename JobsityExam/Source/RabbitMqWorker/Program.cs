@@ -3,6 +3,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using RabbitMQ.Client;
 using RabbitMqWorker.Integration;
+using System;
+using System.Threading;
 
 namespace RabbitMqWorker
 {
@@ -17,18 +19,17 @@ namespace RabbitMqWorker
             Host.CreateDefaultBuilder(args)
                 .ConfigureServices((hostContext, services) =>
                 {
-                    var rabbitMqConf = hostContext.Configuration.GetSection("RabbitMq");
-                    var factory = new ConnectionFactory
+                    var envVariable = "localhost:5672";//Environment.GetEnvironmentVariable("RABBIT_MQ_HOST");
+
+                    //Thread.Sleep(8000);
+
+                    var factory = new ConnectionFactory()
                     {
-                        HostName = rabbitMqConf.GetValue<string>("host"),
-                        UserName = rabbitMqConf.GetValue<string>("username"),
-                        Password = rabbitMqConf.GetValue<string>("password"),
-                        Port = rabbitMqConf.GetValue<int>("port")
+                        Uri = new Uri($"amqp://user:mysecretpassword@{envVariable}")
                     };
 
                     var channel = factory.CreateConnection().CreateModel();
                     services.AddSingleton(channel);
-                    
                     services.AddScoped<IStockInfoIntegrationEndpoint, StockInfoIntegrationEndpoint>();
                     services.AddScoped<IChatIntegrationEndpoint, ChatIntegrationEndpoint>();
                     services.AddSingleton<IQueueIntegration, RabbitMqIntegration>();
