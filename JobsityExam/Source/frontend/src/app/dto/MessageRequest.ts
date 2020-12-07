@@ -1,4 +1,4 @@
 export class MessageRequest {
-    public user: string = '';
-    public message: string = '';
+    public User: string = '';
+    public Message: string = '';
 }

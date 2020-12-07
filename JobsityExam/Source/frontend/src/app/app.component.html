@@ -4,12 +4,12 @@
 <div class="ud-body">
   <div class="msg-box">
     <ul>
-      <li *ngFor="let mObj of msgInboxArray" [ngClass]="mObj.user === msgDto.user ? 'in-msg' : 'ex-msg'">{{mObj.user}} :<br /><span class="msg-italic-style">{{mObj.message}}</span></li>
+      <li *ngFor="let mObj of msgInboxArray" [ngClass]="mObj.User === msgDto.User ? 'in-msg' : 'ex-msg'">{{mObj.User}} :<br /><span class="msg-italic-style">{{mObj.Message}}</span></li>
     </ul>
   </div>
   <div class="ud-flex-row">
-    <input type="text" placeholder="Type message here" class="msg-input" [(ngModel)]="msgDto.message"  />
+    <input type="text" placeholder="Type message here" class="msg-input" [(ngModel)]="msgDto.Message"  />
     <button class="send-btn" (click)= "send()"><i class="fa fa-paper-plane"></i></button>
   </div>
-  <input type="text" placeholder="Your name" class="name-box" [(ngModel)]="msgDto.user" />
+  <input type="text" placeholder="Your name" class="name-box" [(ngModel)]="msgDto.User" />
 </div>

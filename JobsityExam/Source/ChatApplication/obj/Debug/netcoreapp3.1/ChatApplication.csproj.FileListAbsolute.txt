@@ -6,7 +6,6 @@ C:\Pessoal\JobsityExam\JobsityExam\Source\ChatApplication\bin\Debug\netcoreapp3.
 C:\Pessoal\JobsityExam\JobsityExam\Source\ChatApplication\bin\Debug\netcoreapp3.1\ChatApplication.runtimeconfig.dev.json
 C:\Pessoal\JobsityExam\JobsityExam\Source\ChatApplication\bin\Debug\netcoreapp3.1\ChatApplication.dll
 C:\Pessoal\JobsityExam\JobsityExam\Source\ChatApplication\bin\Debug\netcoreapp3.1\ChatApplication.pdb
-C:\Pessoal\JobsityExam\JobsityExam\Source\ChatApplication\obj\Debug\netcoreapp3.1\ChatApplication.csprojAssemblyReference.cache
 C:\Pessoal\JobsityExam\JobsityExam\Source\ChatApplication\obj\Debug\netcoreapp3.1\ChatApplication.AssemblyInfoInputs.cache
 C:\Pessoal\JobsityExam\JobsityExam\Source\ChatApplication\obj\Debug\netcoreapp3.1\ChatApplication.AssemblyInfo.cs
 C:\Pessoal\JobsityExam\JobsityExam\Source\ChatApplication\obj\Debug\netcoreapp3.1\ChatApplication.csproj.CoreCompileInputs.cache
@@ -18,3 +17,4 @@ C:\Pessoal\JobsityExam\JobsityExam\Source\ChatApplication\obj\Debug\netcoreapp3.
 C:\Pessoal\JobsityExam\JobsityExam\Source\ChatApplication\obj\Debug\netcoreapp3.1\ChatApplication.dll
 C:\Pessoal\JobsityExam\JobsityExam\Source\ChatApplication\obj\Debug\netcoreapp3.1\ChatApplication.pdb
 C:\Pessoal\JobsityExam\JobsityExam\Source\ChatApplication\obj\Debug\netcoreapp3.1\ChatApplication.genruntimeconfig.cache
+C:\Pessoal\JobsityExam\JobsityExam\Source\ChatApplication\obj\Debug\netcoreapp3.1\ChatApplication.csprojAssemblyReference.cache

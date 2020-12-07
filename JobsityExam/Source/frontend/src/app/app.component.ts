@@ -21,21 +21,20 @@ export class AppComponent implements OnInit {
 
   send(): void {
     if(this.msgDto) {
-      if(this.msgDto.user.length == 0 || this.msgDto.user.length == 0){
+      if(this.msgDto.Message.length == 0 || this.msgDto.User.length == 0){
         window.alert("Both fields are required.");
         return;
       } else {
         this.chatService.broadcastMessage(this.msgDto);
-        this.msgDto.message = '';
+        this.msgDto.Message = '';
       }
     }
   }
 
   addToInbox(obj: MessageRequest) {
     let newObj = new MessageRequest();
-    newObj.user = obj.user;
-    newObj.message = obj.message;
+    newObj.User = obj.User;
+    newObj.Message = obj.Message;
     this.msgInboxArray.push(newObj);
-
   }
 }
