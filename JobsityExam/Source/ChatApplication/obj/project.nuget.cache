@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "2jojC+FPxAkiXPGr3PV5Vy4Tkl44ZEFivyOBdLrhRMLqi+kPgwpRuhHXJqOG81nSm9Ik9DijRKi6DckI9LNY0A==",
+  "success": true,
+  "projectFilePath": "C:\\Pessoal\\JobsityExam\\JobsityExam\\Source\\ChatApplication\\ChatApplication.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\gamorim\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512"
+  ],
+  "logs": []
+}
