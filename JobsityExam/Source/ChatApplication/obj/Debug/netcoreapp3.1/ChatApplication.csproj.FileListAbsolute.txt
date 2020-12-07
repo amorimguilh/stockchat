@@ -17,4 +17,6 @@ C:\Pessoal\JobsityExam\JobsityExam\Source\ChatApplication\obj\Debug\netcoreapp3.
 C:\Pessoal\JobsityExam\JobsityExam\Source\ChatApplication\obj\Debug\netcoreapp3.1\ChatApplication.dll
 C:\Pessoal\JobsityExam\JobsityExam\Source\ChatApplication\obj\Debug\netcoreapp3.1\ChatApplication.pdb
 C:\Pessoal\JobsityExam\JobsityExam\Source\ChatApplication\obj\Debug\netcoreapp3.1\ChatApplication.genruntimeconfig.cache
-C:\Pessoal\JobsityExam\JobsityExam\Source\ChatApplication\obj\Debug\netcoreapp3.1\ChatApplication.csprojAssemblyReference.cache
+C:\Pessoal\JobsityExam\JobsityExam\Source\ChatApplication\bin\Debug\netcoreapp3.1\RabbitMQ.Client.dll
+C:\Pessoal\JobsityExam\JobsityExam\Source\ChatApplication\bin\Debug\netcoreapp3.1\System.Threading.Channels.dll
+C:\Pessoal\JobsityExam\JobsityExam\Source\ChatApplication\obj\Debug\netcoreapp3.1\ChatApplication.csproj.CopyComplete

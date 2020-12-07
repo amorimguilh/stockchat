@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "2jojC+FPxAkiXPGr3PV5Vy4Tkl44ZEFivyOBdLrhRMLqi+kPgwpRuhHXJqOG81nSm9Ik9DijRKi6DckI9LNY0A==",
+  "dgSpecHash": "6FpZs3kzgWAPiq/6nu7qmwZkwRjgiTdB9hL7/THYfjVPOnKVwqGOnznA4Y4wCkjDY6oWO78Tl34lJA/r8SXhPg==",
   "success": true,
   "projectFilePath": "C:\\Pessoal\\JobsityExam\\JobsityExam\\Source\\ChatApplication\\ChatApplication.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\gamorim\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512"
+    "C:\\Users\\gamorim\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512",
+    "C:\\Users\\gamorim\\.nuget\\packages\\rabbitmq.client\\6.2.1\\rabbitmq.client.6.2.1.nupkg.sha512",
+    "C:\\Users\\gamorim\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
+    "C:\\Users\\gamorim\\.nuget\\packages\\system.threading.channels\\4.7.1\\system.threading.channels.4.7.1.nupkg.sha512"
   ],
   "logs": []
 }

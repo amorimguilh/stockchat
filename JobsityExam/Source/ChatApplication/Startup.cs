@@ -1,9 +1,14 @@
+using ChatApplication.Configurations;
 using ChatApplication.Hubs;
+using ChatApplication.Integration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using RabbitMQ.Client;
+using System;
+using System.Threading;
 
 namespace ChatApplication
 {
@@ -29,9 +34,21 @@ namespace ChatApplication
 
             services.AddSignalR();
 
-
-            services.AddControllers();
+            //var envVariable = Environment.GetEnvironmentVariable("RABBIT_MQ_HOST");
             
+            //Thread.Sleep(8000);
+
+            //var factory = new ConnectionFactory()
+            //{
+            //    Uri = new Uri($"amqp://user:mysecretpassword@{envVariable}")
+            //};
+
+            //var channel = factory.CreateConnection().CreateModel();
+            //services.AddSingleton(channel);
+
+            services.AddSingleton<IChatConfiguration, ChatConfiguration>();
+            services.AddScoped<IQueueIntegration, RabbitMqIntegration>();
+            services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,10 +60,10 @@ namespace ChatApplication
             }
 
             app.UseCors("CorsPolicy");
-            app.UseSignalR(routes =>
-            {
-                routes.MapHub<ChatHub>("/chatsocket");
-            });
+            //app.UseSignalR(routes =>
+            //{
+            //    routes.MapHub<ChatHub>("/chatsocket");
+            //});
 
             //app.UseHttpsRedirection();
 
