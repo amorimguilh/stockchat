@@ -36,7 +36,7 @@ namespace RabbitMqWorker.Integration
                     StockName = stockName.Replace(" ", String.Empty)
                 });
                 var stringContent = new StringContent(jsonObject, Encoding.UTF8, "application/json");
-                var result = await client.PostAsync(string.Empty, stringContent);
+                client.PostAsync(string.Empty, stringContent);
             }
         }
     }

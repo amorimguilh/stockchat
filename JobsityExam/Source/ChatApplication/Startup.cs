@@ -34,17 +34,17 @@ namespace ChatApplication
 
             services.AddSignalR();
 
-            //var envVariable = Environment.GetEnvironmentVariable("RABBIT_MQ_HOST");
-            
-            //Thread.Sleep(8000);
+            var envVariable = Environment.GetEnvironmentVariable("RABBIT_MQ_HOST");
 
-            //var factory = new ConnectionFactory()
-            //{
-            //    Uri = new Uri($"amqp://user:mysecretpassword@{envVariable}")
-            //};
+            Thread.Sleep(8000);
 
-            //var channel = factory.CreateConnection().CreateModel();
-            //services.AddSingleton(channel);
+            var factory = new ConnectionFactory()
+            {
+                Uri = new Uri($"amqp://user:mysecretpassword@{envVariable}")
+            };
+
+            var channel = factory.CreateConnection().CreateModel();
+            services.AddSingleton(channel);
 
             services.AddSingleton<IChatConfiguration, ChatConfiguration>();
             services.AddScoped<IQueueIntegration, RabbitMqIntegration>();
@@ -60,13 +60,7 @@ namespace ChatApplication
             }
 
             app.UseCors("CorsPolicy");
-            //app.UseSignalR(routes =>
-            //{
-            //    routes.MapHub<ChatHub>("/chatsocket");
-            //});
-
-            //app.UseHttpsRedirection();
-
+            
             app.UseRouting();
 
             app.UseAuthorization();

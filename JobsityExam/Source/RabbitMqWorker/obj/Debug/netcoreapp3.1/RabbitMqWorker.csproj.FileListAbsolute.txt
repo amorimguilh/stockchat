@@ -43,4 +43,3 @@ C:\Pessoal\JobsityExam\JobsityExam\Source\RabbitMqWorker\obj\Debug\netcoreapp3.1
 C:\Pessoal\JobsityExam\JobsityExam\Source\RabbitMqWorker\obj\Debug\netcoreapp3.1\RabbitMqWorker.dll
 C:\Pessoal\JobsityExam\JobsityExam\Source\RabbitMqWorker\obj\Debug\netcoreapp3.1\RabbitMqWorker.pdb
 C:\Pessoal\JobsityExam\JobsityExam\Source\RabbitMqWorker\obj\Debug\netcoreapp3.1\RabbitMqWorker.genruntimeconfig.cache
-C:\Pessoal\JobsityExam\JobsityExam\Source\RabbitMqWorker\obj\Debug\netcoreapp3.1\RabbitMqWorker.csprojAssemblyReference.cache

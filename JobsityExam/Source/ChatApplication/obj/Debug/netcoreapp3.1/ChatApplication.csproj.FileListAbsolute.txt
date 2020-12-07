@@ -6,6 +6,8 @@ C:\Pessoal\JobsityExam\JobsityExam\Source\ChatApplication\bin\Debug\netcoreapp3.
 C:\Pessoal\JobsityExam\JobsityExam\Source\ChatApplication\bin\Debug\netcoreapp3.1\ChatApplication.runtimeconfig.dev.json
 C:\Pessoal\JobsityExam\JobsityExam\Source\ChatApplication\bin\Debug\netcoreapp3.1\ChatApplication.dll
 C:\Pessoal\JobsityExam\JobsityExam\Source\ChatApplication\bin\Debug\netcoreapp3.1\ChatApplication.pdb
+C:\Pessoal\JobsityExam\JobsityExam\Source\ChatApplication\bin\Debug\netcoreapp3.1\RabbitMQ.Client.dll
+C:\Pessoal\JobsityExam\JobsityExam\Source\ChatApplication\bin\Debug\netcoreapp3.1\System.Threading.Channels.dll
 C:\Pessoal\JobsityExam\JobsityExam\Source\ChatApplication\obj\Debug\netcoreapp3.1\ChatApplication.AssemblyInfoInputs.cache
 C:\Pessoal\JobsityExam\JobsityExam\Source\ChatApplication\obj\Debug\netcoreapp3.1\ChatApplication.AssemblyInfo.cs
 C:\Pessoal\JobsityExam\JobsityExam\Source\ChatApplication\obj\Debug\netcoreapp3.1\ChatApplication.csproj.CoreCompileInputs.cache
@@ -14,9 +16,7 @@ C:\Pessoal\JobsityExam\JobsityExam\Source\ChatApplication\obj\Debug\netcoreapp3.
 C:\Pessoal\JobsityExam\JobsityExam\Source\ChatApplication\obj\Debug\netcoreapp3.1\staticwebassets\ChatApplication.StaticWebAssets.xml
 C:\Pessoal\JobsityExam\JobsityExam\Source\ChatApplication\obj\Debug\netcoreapp3.1\scopedcss\bundle\ChatApplication.styles.css
 C:\Pessoal\JobsityExam\JobsityExam\Source\ChatApplication\obj\Debug\netcoreapp3.1\ChatApplication.RazorTargetAssemblyInfo.cache
+C:\Pessoal\JobsityExam\JobsityExam\Source\ChatApplication\obj\Debug\netcoreapp3.1\ChatApplication.csproj.CopyComplete
 C:\Pessoal\JobsityExam\JobsityExam\Source\ChatApplication\obj\Debug\netcoreapp3.1\ChatApplication.dll
 C:\Pessoal\JobsityExam\JobsityExam\Source\ChatApplication\obj\Debug\netcoreapp3.1\ChatApplication.pdb
 C:\Pessoal\JobsityExam\JobsityExam\Source\ChatApplication\obj\Debug\netcoreapp3.1\ChatApplication.genruntimeconfig.cache
-C:\Pessoal\JobsityExam\JobsityExam\Source\ChatApplication\bin\Debug\netcoreapp3.1\RabbitMQ.Client.dll
-C:\Pessoal\JobsityExam\JobsityExam\Source\ChatApplication\bin\Debug\netcoreapp3.1\System.Threading.Channels.dll
-C:\Pessoal\JobsityExam\JobsityExam\Source\ChatApplication\obj\Debug\netcoreapp3.1\ChatApplication.csproj.CopyComplete
