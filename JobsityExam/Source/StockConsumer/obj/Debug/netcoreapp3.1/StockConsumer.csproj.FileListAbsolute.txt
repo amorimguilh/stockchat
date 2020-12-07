@@ -20,4 +20,3 @@ C:\Pessoal\JobsityExam\JobsityExam\Source\StockConsumer\obj\Debug\netcoreapp3.1\
 C:\Pessoal\JobsityExam\JobsityExam\Source\StockConsumer\obj\Debug\netcoreapp3.1\StockConsumer.dll
 C:\Pessoal\JobsityExam\JobsityExam\Source\StockConsumer\obj\Debug\netcoreapp3.1\StockConsumer.pdb
 C:\Pessoal\JobsityExam\JobsityExam\Source\StockConsumer\obj\Debug\netcoreapp3.1\StockConsumer.genruntimeconfig.cache
-C:\Pessoal\JobsityExam\JobsityExam\Source\StockConsumer\obj\Debug\netcoreapp3.1\StockConsumer.csprojAssemblyReference.cache
