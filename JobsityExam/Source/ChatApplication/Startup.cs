@@ -24,7 +24,10 @@ namespace ChatApplication
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddCors(o => o.AddPolicy("CorsPolicy", builder => {
+            services.AddSignalR();
+
+            services.AddCors(o => o.AddPolicy("CorsPolicy", builder =>
+            {
                 builder
                 .AllowAnyMethod()
                 .AllowAnyHeader()
@@ -32,15 +35,13 @@ namespace ChatApplication
                 .WithOrigins("http://localhost:4200");
             }));
 
-            services.AddSignalR();
-
             var envVariable = Environment.GetEnvironmentVariable("RABBIT_MQ_HOST");
 
             Thread.Sleep(8000);
 
             var factory = new ConnectionFactory()
             {
-                Uri = new Uri($"amqp://user:mysecretpassword@{envVariable}")
+                Uri = new Uri($"amqp://user:mysecretpassword@localhost:5672")
             };
 
             var channel = factory.CreateConnection().CreateModel();
@@ -49,6 +50,11 @@ namespace ChatApplication
             services.AddSingleton<IChatConfiguration, ChatConfiguration>();
             services.AddScoped<IQueueIntegration, RabbitMqIntegration>();
             services.AddControllers();
+            //services.AddCors(c =>
+            //{
+            //    c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
+            //});
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -59,11 +65,21 @@ namespace ChatApplication
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseCors("CorsPolicy");
-            
+            //app.UseHttpsRedirection();
+
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseCors("CorsPolicy");
+            //app.UseCors((builder) =>
+            //{
+            //    builder
+            //    .AllowAnyMethod()
+            //    .AllowAnyHeader()
+            //    //.AllowCredentials()
+            //    .SetIsOriginAllowed((host) => true)
+            //    .AllowAnyOrigin();
+            //});
 
             app.UseEndpoints(endpoints =>
             {

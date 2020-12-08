@@ -1,9 +1,5 @@
 version: '3.4'
 
-networks:
-  exam-network:
-    driver: bridge
-    
 services:
   rabbit:
     image: rabbitmq:3-management
@@ -15,8 +11,6 @@ services:
     ports:
     - "5672:5672"
     - "15672:15672"    
-    networks:
-      - exam-network
     
   stockconsumer:
     image: gamorim/stockconsumer
@@ -29,10 +23,6 @@ services:
       dockerfile: Dockerfile
     environment:
       RABBIT_MQ_HOST: rabbit
-    ports:
-      - "5001:80"
-    networks:
-      - exam-network  
   
   rabbitmqworker:
     image: gamorim/rabbitmqworker
@@ -45,6 +35,4 @@ services:
       context: ./RabbitMqWorker
       dockerfile: Dockerfile
     environment:
-      RABBIT_MQ_HOST: rabbit
-    networks:
-      - exam-network  
+      RABBIT_MQ_HOST: rabbit 

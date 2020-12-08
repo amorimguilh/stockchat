@@ -21,11 +21,11 @@ namespace RabbitMqWorker
                 {
                     var envVariable = Environment.GetEnvironmentVariable("RABBIT_MQ_HOST");
 
-                    Thread.Sleep(8000);
+                    //Thread.Sleep(8000);
 
                     var factory = new ConnectionFactory()
                     {
-                        Uri = new Uri($"amqp://user:mysecretpassword@{envVariable}")
+                        Uri = new Uri($"amqp://user:mysecretpassword@localhost:5672")
                     };
 
                     var channel = factory.CreateConnection().CreateModel();

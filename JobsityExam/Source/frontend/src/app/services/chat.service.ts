@@ -18,7 +18,7 @@ export class ChatService {
 
   private receivedMessageObject: MessageRequest = new MessageRequest();
   private sharedObj = new Subject<MessageRequest>();
-
+  
   constructor(private http: HttpClient) { 
     this.connection.onclose(async () => {
       await this.start();

@@ -20,3 +20,4 @@ C:\Pessoal\JobsityExam\JobsityExam\Source\ChatApplication\obj\Debug\netcoreapp3.
 C:\Pessoal\JobsityExam\JobsityExam\Source\ChatApplication\obj\Debug\netcoreapp3.1\ChatApplication.dll
 C:\Pessoal\JobsityExam\JobsityExam\Source\ChatApplication\obj\Debug\netcoreapp3.1\ChatApplication.pdb
 C:\Pessoal\JobsityExam\JobsityExam\Source\ChatApplication\obj\Debug\netcoreapp3.1\ChatApplication.genruntimeconfig.cache
+C:\Pessoal\JobsityExam\JobsityExam\Source\ChatApplication\obj\Debug\netcoreapp3.1\ChatApplication.csprojAssemblyReference.cache
