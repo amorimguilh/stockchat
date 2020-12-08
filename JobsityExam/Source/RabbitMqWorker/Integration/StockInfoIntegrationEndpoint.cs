@@ -10,7 +10,7 @@ namespace RabbitMqWorker.Integration
 {
     public class StockInfoIntegrationEndpoint : IStockInfoIntegrationEndpoint
     {
-        private static readonly string _endpointUri = "http://localhost:9270/api/stockconsumer";
+        private static readonly string _endpointUri = "http://stockconsumer/api/stockconsumer";
         private readonly ILogger<StockInfoIntegrationEndpoint> _logger;
 
         public StockInfoIntegrationEndpoint(ILogger<StockInfoIntegrationEndpoint> logger)

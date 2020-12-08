@@ -26,22 +26,26 @@ namespace ChatApplication
         {
             services.AddSignalR();
 
-            services.AddCors(o => o.AddPolicy("CorsPolicy", builder =>
+            services.AddCors(o => o.AddDefaultPolicy(builder =>
             {
-                builder
-                .AllowAnyMethod()
-                .AllowAnyHeader()
-                .AllowCredentials()
-                .WithOrigins("http://localhost:4200");
+            builder
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .WithExposedHeaders("Origin", "X-Requested-With", "Content-Type", "Accept", "Authorization", "Access", "Access-Control-Allow-Origin")
+            .WithHeaders("Origin", "X-Requested-With", "Content-Type", "Accept", "Authorization", "Access", "Access-Control-Allow-Origin")
+            .AllowAnyOrigin();
+                //.AllowCredentials()
+                //.WithOrigins("http://frontend:80","http://frontend:4200",
+                //"http://localhost:4200", "http://localhost:80");
             }));
 
-            //var envVariable = Environment.GetEnvironmentVariable("RABBIT_MQ_HOST");
+            var envVariable = Environment.GetEnvironmentVariable("RABBIT_MQ_HOST");
 
-            //Thread.Sleep(8000);
+            Thread.Sleep(8000);
 
             var factory = new ConnectionFactory()
             {
-                Uri = new Uri($"amqp://user:mysecretpassword@localhost:5672")
+                Uri = new Uri($"amqp://user:mysecretpassword@{envVariable}")
             };
 
             var channel = factory.CreateConnection().CreateModel();
@@ -50,11 +54,6 @@ namespace ChatApplication
             services.AddSingleton<IChatConfiguration, ChatConfiguration>();
             services.AddScoped<IQueueIntegration, RabbitMqIntegration>();
             services.AddControllers();
-            //services.AddCors(c =>
-            //{
-            //    c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
-            //});
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -65,21 +64,11 @@ namespace ChatApplication
                 app.UseDeveloperExceptionPage();
             }
 
-            //app.UseHttpsRedirection();
+            app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            app.UseCors();
             app.UseAuthorization();
-            app.UseCors("CorsPolicy");
-            //app.UseCors((builder) =>
-            //{
-            //    builder
-            //    .AllowAnyMethod()
-            //    .AllowAnyHeader()
-            //    //.AllowCredentials()
-            //    .SetIsOriginAllowed((host) => true)
-            //    .AllowAnyOrigin();
-            //});
 
             app.UseEndpoints(endpoints =>
             {

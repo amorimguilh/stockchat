@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ebF82fIGaUueZ2KsBcz5FGeuUHhaSF1vLJ5NP+ZGsd7k+LR0GQ/YkY/OeWtYD+D9uGX3GZk7G5xW/CTQHPhzrA==",
+  "dgSpecHash": "Uk3vABp3W0BLS1jPnd7Ng4KLNVgX7a3/+trsjUd2f9+ZGYIWNeOOzlTp5BII7QNOGLjY4pUR5aqllGhXxgtg6g==",
   "success": true,
-  "projectFilePath": "C:\\Pessoal\\JobsityExam\\JobsityExam\\Source\\RabbitMqWorker\\RabbitMqWorker.csproj",
+  "projectFilePath": "C:\\Pessoal\\stockchat\\JobsityExam\\Source\\RabbitMqWorker\\RabbitMqWorker.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gamorim\\.nuget\\packages\\microsoft.extensions.configuration\\3.1.8\\microsoft.extensions.configuration.3.1.8.nupkg.sha512",
     "C:\\Users\\gamorim\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\3.1.8\\microsoft.extensions.configuration.abstractions.3.1.8.nupkg.sha512",

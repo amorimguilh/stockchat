@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6FpZs3kzgWAPiq/6nu7qmwZkwRjgiTdB9hL7/THYfjVPOnKVwqGOnznA4Y4wCkjDY6oWO78Tl34lJA/r8SXhPg==",
+  "dgSpecHash": "WjbOznVtnqopiEpGyHG9062Go7fsEQcQHutwHD+jC1dIvj6nEJwvOPcqoJ5GBORoPRI082j+m5Rkydf8+WJodg==",
   "success": true,
-  "projectFilePath": "C:\\Pessoal\\JobsityExam\\JobsityExam\\Source\\ChatApplication\\ChatApplication.csproj",
+  "projectFilePath": "C:\\Pessoal\\stockchat\\JobsityExam\\Source\\ChatApplication\\ChatApplication.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gamorim\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512",
     "C:\\Users\\gamorim\\.nuget\\packages\\rabbitmq.client\\6.2.1\\rabbitmq.client.6.2.1.nupkg.sha512",

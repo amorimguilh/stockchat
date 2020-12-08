@@ -187,11 +187,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Pessoal\\JobsityExam\\JobsityExam\\Source\\StockConsumer\\StockConsumer.csproj",
+      "projectUniqueName": "C:\\Pessoal\\stockchat\\JobsityExam\\Source\\StockConsumer\\StockConsumer.csproj",
       "projectName": "StockConsumer",
-      "projectPath": "C:\\Pessoal\\JobsityExam\\JobsityExam\\Source\\StockConsumer\\StockConsumer.csproj",
+      "projectPath": "C:\\Pessoal\\stockchat\\JobsityExam\\Source\\StockConsumer\\StockConsumer.csproj",
       "packagesPath": "C:\\Users\\gamorim\\.nuget\\packages\\",
-      "outputPath": "C:\\Pessoal\\JobsityExam\\JobsityExam\\Source\\StockConsumer\\obj\\",
+      "outputPath": "C:\\Pessoal\\stockchat\\JobsityExam\\Source\\StockConsumer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

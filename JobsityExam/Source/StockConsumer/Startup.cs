@@ -22,14 +22,13 @@ namespace StockConsumer
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //var envVariable = Environment.GetEnvironmentVariable("RABBIT_MQ_HOST");
+            var envVariable = Environment.GetEnvironmentVariable("RABBIT_MQ_HOST");
 
-            //Thread.Sleep(8000);
+            Thread.Sleep(8000);
 
             var factory = new ConnectionFactory()
             {
-                //Uri = new Uri($"amqp://user:mysecretpassword@{envVariable}")
-                Uri = new Uri($"amqp://user:mysecretpassword@localhost:5672")
+                Uri = new Uri($"amqp://user:mysecretpassword@{envVariable}")
             };
 
             var channel = factory.CreateConnection().CreateModel();

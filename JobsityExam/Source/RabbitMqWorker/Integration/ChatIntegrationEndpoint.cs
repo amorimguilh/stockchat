@@ -10,7 +10,7 @@ namespace RabbitMqWorker.Integration
 {
     public class ChatIntegrationEndpoint : IChatIntegrationEndpoint
     {
-        private static readonly string _endpointUri = "http://localhost:15198/api/chat/send";
+        private static readonly string _endpointUri = "http://chatapp/api/chat/send";
         private readonly ILogger<ChatIntegrationEndpoint> _logger;
         
         public ChatIntegrationEndpoint(ILogger<ChatIntegrationEndpoint> logger)

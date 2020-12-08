@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Pessoal\\JobsityExam\\JobsityExam\\Source\\RabbitMqWorker\\RabbitMqWorker.csproj": {}
+    "C:\\Pessoal\\stockchat\\JobsityExam\\Source\\RabbitMqWorker\\RabbitMqWorker.csproj": {}
   },
   "projects": {
-    "C:\\Pessoal\\JobsityExam\\JobsityExam\\Source\\RabbitMqWorker\\RabbitMqWorker.csproj": {
+    "C:\\Pessoal\\stockchat\\JobsityExam\\Source\\RabbitMqWorker\\RabbitMqWorker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Pessoal\\JobsityExam\\JobsityExam\\Source\\RabbitMqWorker\\RabbitMqWorker.csproj",
+        "projectUniqueName": "C:\\Pessoal\\stockchat\\JobsityExam\\Source\\RabbitMqWorker\\RabbitMqWorker.csproj",
         "projectName": "RabbitMqWorker",
-        "projectPath": "C:\\Pessoal\\JobsityExam\\JobsityExam\\Source\\RabbitMqWorker\\RabbitMqWorker.csproj",
+        "projectPath": "C:\\Pessoal\\stockchat\\JobsityExam\\Source\\RabbitMqWorker\\RabbitMqWorker.csproj",
         "packagesPath": "C:\\Users\\gamorim\\.nuget\\packages\\",
-        "outputPath": "C:\\Pessoal\\JobsityExam\\JobsityExam\\Source\\RabbitMqWorker\\obj\\",
+        "outputPath": "C:\\Pessoal\\stockchat\\JobsityExam\\Source\\RabbitMqWorker\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -11,10 +11,10 @@ export class ChatService {
 
   private connection: any = new signalR.HubConnectionBuilder()
                                   .configureLogging(signalR.LogLevel.Debug)
-                                  .withUrl("http://localhost:15198/chatsocket") 
+                                  .withUrl("http://localhost/chatsocket") 
                                   .build();
 
-  readonly POST_URL = "http://localhost:15198/api/chat/send"
+  readonly POST_URL = "http://localhost/api/chat/send"
 
   private receivedMessageObject: MessageRequest = new MessageRequest();
   private sharedObj = new Subject<MessageRequest>();

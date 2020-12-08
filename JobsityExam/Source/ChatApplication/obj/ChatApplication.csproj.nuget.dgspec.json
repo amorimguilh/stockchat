@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Pessoal\\JobsityExam\\JobsityExam\\Source\\ChatApplication\\ChatApplication.csproj": {}
+    "C:\\Pessoal\\stockchat\\JobsityExam\\Source\\ChatApplication\\ChatApplication.csproj": {}
   },
   "projects": {
-    "C:\\Pessoal\\JobsityExam\\JobsityExam\\Source\\ChatApplication\\ChatApplication.csproj": {
+    "C:\\Pessoal\\stockchat\\JobsityExam\\Source\\ChatApplication\\ChatApplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Pessoal\\JobsityExam\\JobsityExam\\Source\\ChatApplication\\ChatApplication.csproj",
+        "projectUniqueName": "C:\\Pessoal\\stockchat\\JobsityExam\\Source\\ChatApplication\\ChatApplication.csproj",
         "projectName": "ChatApplication",
-        "projectPath": "C:\\Pessoal\\JobsityExam\\JobsityExam\\Source\\ChatApplication\\ChatApplication.csproj",
+        "projectPath": "C:\\Pessoal\\stockchat\\JobsityExam\\Source\\ChatApplication\\ChatApplication.csproj",
         "packagesPath": "C:\\Users\\gamorim\\.nuget\\packages\\",
-        "outputPath": "C:\\Pessoal\\JobsityExam\\JobsityExam\\Source\\ChatApplication\\obj\\",
+        "outputPath": "C:\\Pessoal\\stockchat\\JobsityExam\\Source\\ChatApplication\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

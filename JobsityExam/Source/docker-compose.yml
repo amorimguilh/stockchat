@@ -9,7 +9,6 @@ services:
         RABBITMQ_DEFAULT_USER: user
         RABBITMQ_DEFAULT_PASS: mysecretpassword
     ports:
-    - "5672:5672"
     - "15672:15672"    
     
   stockconsumer:
@@ -24,15 +23,42 @@ services:
     environment:
       RABBIT_MQ_HOST: rabbit
   
+  chatapp:
+    image: gamorim/chatapp
+    container_name: chatapp
+    restart: on-failure
+    depends_on:
+      - rabbit
+    build:
+      context: ./ChatApplication
+      dockerfile: Dockerfile
+    environment:
+      RABBIT_MQ_HOST: rabbit
+      
   rabbitmqworker:
     image: gamorim/rabbitmqworker
     container_name: rabbitmqworker
     restart: on-failure
     depends_on:
       - rabbit
+      - chatapp
       - stockconsumer
     build:
       context: ./RabbitMqWorker
       dockerfile: Dockerfile
     environment:
-      RABBIT_MQ_HOST: rabbit 
+      RABBIT_MQ_HOST: rabbit
+    
+  frontend:
+    image: gamorim/frontend
+    container_name: frontend
+    restart: on-failure
+    depends_on:
+      - rabbit
+      - chatapp
+      - rabbitmqworker
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+    - "4200:80" 
