@@ -1,14 +1,14 @@
 # stockchat
 Realtime chat with options to get the price of a given stock
 
-!!! Right now the solution is only working a local machine due to some cors problems between the frontend and the chat application.
+<b>!!! Right now the solution is only working a local machine due to some cors problems between the frontend and the chat application.</b>
 
-Dependencies that need to be installed in the machine:
+<b>Dependencies that need to be installed in the machine:</b>
  - Docker
  - Node
  - .Net Core development environment
 
-HOW TO RUN THIS SOLUTION
+<b>HOW TO RUN THIS SOLUTION</b>
   1) Having docker running, on a command line tool, create a container to host RabbitMQ with the command: 
      docker run -d --hostname rabbit --name rabbit --domainname rabbit -p 5672:5672 -p 15672:15672 --env RABBITMQ_DEFAULT_USER=user --env RABBITMQ_DEFAULT_PASS=mysecretpassword  rabbitmq:3-management
   2) Open 4 poweshell instances (it can be any command line tool)
