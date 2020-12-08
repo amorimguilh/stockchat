@@ -3,8 +3,9 @@ Realtime chat with options to get the price of a given stock
 
 !!! Right now the solution is only working a local machine due to some cors problems between the frontend and the chat application.
 
-Dependencies:
+Dependencies that need to be installed in the machine:
  - Docker
+ - Node
  - .Net Core development environment
 
 HOW TO RUN THIS SOLUTION
@@ -18,6 +19,7 @@ HOW TO RUN THIS SOLUTION
   7) On the third powershell instance change the directory to: <clonned solution path>\JobsityExam\Source\RabbitMqWorker
   8) Run the command 'dotnet run'.
   9) On the fourth powershell instance change the directory to: <clonned solution path>\JobsityExam\Source\frontend
- 10) Run the command 'npm start'.
+ 10) Run the command 'npm install'
+ 11) Run the command 'npm start'.
  
 The Application should be available at localhost:4200  
