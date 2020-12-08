@@ -19,12 +19,13 @@ namespace RabbitMqWorker
             Host.CreateDefaultBuilder(args)
                 .ConfigureServices((hostContext, services) =>
                 {
-                    var envVariable = Environment.GetEnvironmentVariable("RABBIT_MQ_HOST");
+                    //var envVariable = Environment.GetEnvironmentVariable("RABBIT_MQ_HOST");
 
                     //Thread.Sleep(8000);
 
                     var factory = new ConnectionFactory()
                     {
+                        //Uri = new Uri($"amqp://user:mysecretpassword@{envVariable}")
                         Uri = new Uri($"amqp://user:mysecretpassword@localhost:5672")
                     };
 

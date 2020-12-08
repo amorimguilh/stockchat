@@ -35,9 +35,9 @@ namespace ChatApplication
                 .WithOrigins("http://localhost:4200");
             }));
 
-            var envVariable = Environment.GetEnvironmentVariable("RABBIT_MQ_HOST");
+            //var envVariable = Environment.GetEnvironmentVariable("RABBIT_MQ_HOST");
 
-            Thread.Sleep(8000);
+            //Thread.Sleep(8000);
 
             var factory = new ConnectionFactory()
             {

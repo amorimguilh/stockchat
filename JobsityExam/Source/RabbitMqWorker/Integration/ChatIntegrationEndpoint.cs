@@ -34,10 +34,10 @@ namespace RabbitMqWorker.Integration
                 var jsonObject = JsonConvert.SerializeObject(new MessageRequest
                 {
                     User = "bot",
-                    Message = message.Replace(" ", String.Empty)
+                    Message = message.Trim()
                 });
                 var stringContent = new StringContent(jsonObject, Encoding.UTF8, "application/json");
-                var result = await client.PostAsync(string.Empty, stringContent);
+               await client.PostAsync(string.Empty, stringContent);
             }
         }
     }

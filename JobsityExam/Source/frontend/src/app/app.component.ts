@@ -35,6 +35,10 @@ export class AppComponent implements OnInit {
     let newObj = new MessageRequest();
     newObj.User = obj.User;
     newObj.Message = obj.Message;
+    if(this.msgInboxArray.length == 50)
+    {
+      this.msgInboxArray.shift();
+    }
     this.msgInboxArray.push(newObj);
   }
 }

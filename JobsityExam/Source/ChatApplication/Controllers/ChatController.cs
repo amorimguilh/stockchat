@@ -47,7 +47,7 @@ namespace ChatApplication.Controllers
                     var commandParts = chatMessage.Message.Split('=');
                     if (IsValidCommandPattern(commandParts, _configuration))
                     {
-                        _queueIntegration.PublishMessage(chatMessage.Message);
+                        _queueIntegration.PublishMessage(commandParts[1]);
                     }
                 }
             }
