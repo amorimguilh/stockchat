@@ -8,6 +8,10 @@ using System.Threading.Tasks;
 
 namespace RabbitMqWorker.Integration
 {
+    /// <summary>
+    /// Implements the IChatIntegrationEndpoint in order to allow the system to post 
+    /// messages on the chat
+    /// </summary>
     public class ChatIntegrationEndpoint : IChatIntegrationEndpoint
     {
         private static readonly string _endpointUri = "http://chatapp/api/chat/send";
@@ -18,6 +22,9 @@ namespace RabbitMqWorker.Integration
             _logger = logger;
         }
 
+        /// <summary>
+        /// Posts a given message in the chat application
+        /// </summary>
         public async Task PostStockInfoOnChat(string message)
         {
             if(string.IsNullOrWhiteSpace(message))

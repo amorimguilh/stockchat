@@ -6,6 +6,9 @@ using System.Text;
 
 namespace RabbitMqWorker.Integration
 {
+    /// <summary>
+    /// Implemments a rabbit mq integration 
+    /// </summary>
     public class RabbitMqIntegration : IQueueIntegration
     {
         private const string post_chat_queue = "post_chat_queue";
@@ -42,6 +45,12 @@ namespace RabbitMqWorker.Integration
                                   consumer: consumer);
         }
 
+        /// <summary>
+        /// Reads a message in both queues and directs to the correct processor
+        /// A message can be send to the chat, or be processed to get the stock value
+        /// post_chat_queue: Queue that stores the info to post the stock value in the chat app
+        /// get_stock_quote_queue: Queue that stores the requests of users for the quotation of stocks
+        /// </summary>
         public void ProcessMessage(object model, BasicDeliverEventArgs ea)
         {
             using var scope = _serviceScopeFactory.CreateScope();

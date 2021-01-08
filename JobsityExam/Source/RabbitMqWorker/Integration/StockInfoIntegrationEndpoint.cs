@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace RabbitMqWorker.Integration
 {
+    /// <summary>
+    /// Integrates with the stock consumer web api
+    /// </summary>
     public class StockInfoIntegrationEndpoint : IStockInfoIntegrationEndpoint
     {
         private static readonly string _endpointUri = "http://stockconsumer/api/stockconsumer";
@@ -18,6 +21,9 @@ namespace RabbitMqWorker.Integration
             _logger = logger;
         }
 
+        /// <summary>
+        /// Send a request to the stock consumer web api
+        /// </summary>
         public async Task SendRequestStockInfo(string stockName)
         {
             if (string.IsNullOrWhiteSpace(stockName))

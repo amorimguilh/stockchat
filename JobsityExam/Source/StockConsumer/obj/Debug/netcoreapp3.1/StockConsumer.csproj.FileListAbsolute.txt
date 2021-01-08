@@ -43,3 +43,4 @@ C:\Pessoal\stockchat\JobsityExam\Source\StockConsumer\obj\Debug\netcoreapp3.1\St
 C:\Pessoal\stockchat\JobsityExam\Source\StockConsumer\obj\Debug\netcoreapp3.1\StockConsumer.dll
 C:\Pessoal\stockchat\JobsityExam\Source\StockConsumer\obj\Debug\netcoreapp3.1\StockConsumer.pdb
 C:\Pessoal\stockchat\JobsityExam\Source\StockConsumer\obj\Debug\netcoreapp3.1\StockConsumer.genruntimeconfig.cache
+C:\Pessoal\stockchat\JobsityExam\Source\StockConsumer\obj\Debug\netcoreapp3.1\StockConsumer.csprojAssemblyReference.cache

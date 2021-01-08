@@ -43,3 +43,4 @@ C:\Pessoal\stockchat\JobsityExam\Source\ChatApplication\obj\Debug\netcoreapp3.1\
 C:\Pessoal\stockchat\JobsityExam\Source\ChatApplication\obj\Debug\netcoreapp3.1\ChatApplication.dll
 C:\Pessoal\stockchat\JobsityExam\Source\ChatApplication\obj\Debug\netcoreapp3.1\ChatApplication.pdb
 C:\Pessoal\stockchat\JobsityExam\Source\ChatApplication\obj\Debug\netcoreapp3.1\ChatApplication.genruntimeconfig.cache
+C:\Pessoal\stockchat\JobsityExam\Source\ChatApplication\obj\Debug\netcoreapp3.1\ChatApplication.csprojAssemblyReference.cache

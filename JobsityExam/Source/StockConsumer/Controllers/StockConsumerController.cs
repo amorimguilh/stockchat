@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace StockConsumer.Controllers
 {
+    /// <summary>
+    /// Controller that consumes an external service to retrive stock price
+    /// </summary>
     [ApiController]
     [Route("api/[controller]")]
     public class StockConsumerController : ControllerBase
@@ -16,7 +19,6 @@ namespace StockConsumer.Controllers
         private readonly ILogger<StockConsumerController> _logger;
         private readonly IQueueIntegration _queueIntegration;
         private readonly IStockFileInfoIntegration _stockInfoIntegration;
-
         private static readonly string closeValueHeaderDescription = "Close";
 
         public StockConsumerController(
@@ -29,11 +31,15 @@ namespace StockConsumer.Controllers
             _queueIntegration = queueIntegration;
         }
 
+        /// <summary>
+        /// Sends a request to an external service to retrieve a csv file with the stock price of 
+        /// a desired stock and publishes the stock information in a queue
+        /// </summary>
         [HttpPost]
-        public async Task Get([FromBody] StockConsumerRequest stock)
+        public async Task RetrieveStockPriceRequest([FromBody] StockConsumerRequest stock)
         {
             var stockName = stock.StockName;
-            string message = string.Empty;
+            string queueMessage = string.Empty;
 
             try
             {
@@ -42,24 +48,27 @@ namespace StockConsumer.Controllers
 
                 (fileHeaders, fileContent) = await _stockInfoIntegration.GetStockInfoFile(stockName);
 
-                var stockValueIndex = GetStockNameAndValueIndexes(fileHeaders);
+                var stockValueIndex = GetStockCloseValueIndex(fileHeaders);
 
                 ValidateHeadersAndColumnsQuantity(fileHeaders, fileContent);
 
-                message = GenerateMessage(stockName, stockValueIndex, fileContent);
+                queueMessage = GenerateQueueMessage(stockName, stockValueIndex, fileContent);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex.Message);
-                message = $"Unable to get {stockName} stock information.";
+                queueMessage = $"Unable to get {stockName} stock information.";
             }
             finally
             {
-                _queueIntegration.PostMessage(message);
+                _queueIntegration.PostMessage(queueMessage);
             }
         }
 
-        private static string GenerateMessage(string stock, int stockValueIndex, List<string> fileContent)
+        /// <summary>
+        /// Generates a message with the requested stock information
+        /// </summary>
+        private static string GenerateQueueMessage(string stock, int stockValueIndex, List<string> fileContent)
         {
             var stockValue = -1f;
             if (float.TryParse(fileContent[stockValueIndex], out stockValue))
@@ -70,15 +79,21 @@ namespace StockConsumer.Controllers
             return $"{stock} was not found. Please check the entire name of the stock, most stock names end with '.US'";
         }
 
-        private static int GetStockNameAndValueIndexes(List<string> fileHeaders)
+        /// <summary>
+        /// Gets the index in the csv file that represents the close value of a stock.
+        /// </summary>
+        private static int GetStockCloseValueIndex(List<string> fileHeaders)
         {
             var stockValueIndex = fileHeaders.IndexOf(closeValueHeaderDescription);
 
-            ValidateIndexes(stockValueIndex);
+            ValidateIndex(stockValueIndex);
 
             return stockValueIndex;
         }
 
+        /// <summary>
+        /// Validates the amount of headers and columns in the csv file to guarantee its consistency
+        /// </summary>
         private static void ValidateHeadersAndColumnsQuantity(List<string> fileHeaders, List<string> fileContent)
         {
             if (fileHeaders.Count != fileContent.Count)
@@ -87,7 +102,10 @@ namespace StockConsumer.Controllers
             }
         }
 
-        private static void ValidateIndexes(int stockValueIndex)
+        /// <summary>
+        /// Validate if a index in the file is valid
+        /// </summary>
+        private static void ValidateIndex(int stockValueIndex)
         {
             if (stockValueIndex == -1)
             {

@@ -1,5 +1,8 @@
 version: '3.4'
 
+networks: 
+  appNetwork:
+
 services:
   rabbit:
     image: rabbitmq:3-management
@@ -9,7 +12,10 @@ services:
         RABBITMQ_DEFAULT_USER: user
         RABBITMQ_DEFAULT_PASS: mysecretpassword
     ports:
-    - "15672:15672"    
+    - "5672:5672"
+    - "30000:15672"   
+    networks: 
+      - appNetwork 
     
   stockconsumer:
     image: gamorim/stockconsumer
@@ -22,6 +28,8 @@ services:
       dockerfile: Dockerfile
     environment:
       RABBIT_MQ_HOST: rabbit
+    networks: 
+      - appNetwork
   
   chatapp:
     image: gamorim/chatapp
@@ -34,7 +42,11 @@ services:
       dockerfile: Dockerfile
     environment:
       RABBIT_MQ_HOST: rabbit
-      
+    ports:
+    - "8080:80"
+    networks: 
+      - appNetwork
+
   rabbitmqworker:
     image: gamorim/rabbitmqworker
     container_name: rabbitmqworker
@@ -48,6 +60,8 @@ services:
       dockerfile: Dockerfile
     environment:
       RABBIT_MQ_HOST: rabbit
+    networks: 
+      - appNetwork
     
   frontend:
     image: gamorim/frontend
@@ -61,4 +75,6 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
     ports:
-    - "4200:80" 
+    - "4200:80"
+    networks: 
+      - appNetwork

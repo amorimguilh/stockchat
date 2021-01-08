@@ -89,3 +89,4 @@ C:\Pessoal\stockchat\JobsityExam\Source\RabbitMqWorker\obj\Debug\netcoreapp3.1\R
 C:\Pessoal\stockchat\JobsityExam\Source\RabbitMqWorker\obj\Debug\netcoreapp3.1\RabbitMqWorker.dll
 C:\Pessoal\stockchat\JobsityExam\Source\RabbitMqWorker\obj\Debug\netcoreapp3.1\RabbitMqWorker.pdb
 C:\Pessoal\stockchat\JobsityExam\Source\RabbitMqWorker\obj\Debug\netcoreapp3.1\RabbitMqWorker.genruntimeconfig.cache
+C:\Pessoal\stockchat\JobsityExam\Source\RabbitMqWorker\obj\Debug\netcoreapp3.1\RabbitMqWorker.csprojAssemblyReference.cache

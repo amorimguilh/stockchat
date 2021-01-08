@@ -1,13 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "KNKpDLdo8Cb9RWT4Evqr2QDdauS6gWfJpyUi5DHPvihuUPhmXFsrk4NmxIXtbrf0tCqwMBaWN3sasw3Dt2tKcA==",
+  "dgSpecHash": "QGNUJNZWf//iaMQWNj9luMhb5tpOW8OQ0t+JHzJivUU4uNAQtyoZFabUfiGdBOA2HtEuUAFsMfr7kS9PUph1ig==",
   "success": true,
   "projectFilePath": "C:\\Pessoal\\stockchat\\JobsityExam\\Source\\StockConsumer\\StockConsumer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gamorim\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512",
     "C:\\Users\\gamorim\\.nuget\\packages\\rabbitmq.client\\6.2.1\\rabbitmq.client.6.2.1.nupkg.sha512",
     "C:\\Users\\gamorim\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
-    "C:\\Users\\gamorim\\.nuget\\packages\\system.threading.channels\\4.7.1\\system.threading.channels.4.7.1.nupkg.sha512"
+    "C:\\Users\\gamorim\\.nuget\\packages\\system.threading.channels\\4.7.1\\system.threading.channels.4.7.1.nupkg.sha512",
+    "C:\\Users\\gamorim\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\gamorim\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\gamorim\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\gamorim\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.10\\microsoft.netcore.app.host.win-x64.3.1.10.nupkg.sha512"
   ],
   "logs": []
 }

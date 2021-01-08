@@ -14,6 +14,8 @@ namespace ChatApplication
 {
     public class Startup
     {
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -24,20 +26,24 @@ namespace ChatApplication
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSignalR();
-
-            services.AddCors(o => o.AddDefaultPolicy(builder =>
+            services.AddCors(options =>
             {
-            builder
-            .AllowAnyMethod()
-            .AllowAnyHeader()
-            .WithExposedHeaders("Origin", "X-Requested-With", "Content-Type", "Accept", "Authorization", "Access", "Access-Control-Allow-Origin")
-            .WithHeaders("Origin", "X-Requested-With", "Content-Type", "Accept", "Authorization", "Access", "Access-Control-Allow-Origin")
-            .AllowAnyOrigin();
-                //.AllowCredentials()
-                //.WithOrigins("http://frontend:80","http://frontend:4200",
-                //"http://localhost:4200", "http://localhost:80");
-            }));
+                options.AddPolicy(
+                                name: MyAllowSpecificOrigins,
+                                builder =>
+                                {
+                                    builder
+                                    .AllowAnyMethod()
+                                    .AllowAnyHeader()
+                                    .AllowCredentials()
+                                    .SetIsOriginAllowed((host) => true);
+                                });
+            });
+
+            services.AddSignalR(conf => 
+            {
+                conf.EnableDetailedErrors = true;
+            });
 
             var envVariable = Environment.GetEnvironmentVariable("RABBIT_MQ_HOST");
 
@@ -65,9 +71,12 @@ namespace ChatApplication
             }
 
             app.UseHttpsRedirection();
-
+            
             app.UseRouting();
-            app.UseCors();
+            
+            // UseCors adds the CORS middleware. The call to UseCors must be placed after UseRouting, but before UseAuthorization
+            app.UseCors(MyAllowSpecificOrigins);
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
