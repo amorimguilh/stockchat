@@ -1,19 +1,28 @@
-﻿using RabbitMQ.Client;
+﻿using ChatApplication.Configurations;
+using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace ChatApplication.Integration
 {
+    /// <summary>
+    /// Implemments a rabbit mq integration 
+    /// </summary>
     public class RabbitMqIntegration : IQueueIntegration
     {
-        private const string get_stock_quote_queue = "get_stock_quote_queue";
         private readonly IModel _channel;
+        private readonly string _queueName;
 
-        public RabbitMqIntegration(IModel channel)
+        /// <summary>
+        /// Instantiate a object to publish a message in rabbitmq
+        /// </summary>
+        public RabbitMqIntegration(
+            IModel channel,
+            IChatConfiguration configuration)
         {
+            _queueName = configuration.QueueName;
             _channel = channel;
-            _channel.QueueDeclare(queue: get_stock_quote_queue,
+            _channel.QueueDeclare(queue: _queueName,
                                  durable: false,
                                  exclusive: false,
                                  autoDelete: false,
@@ -22,12 +31,15 @@ namespace ChatApplication.Integration
             var consumer = new EventingBasicConsumer(_channel);
         }
 
-        public async Task PublishMessage(string message)
+        /// <summary>
+        /// Publishes a message in a rabbit mq queue
+        /// </summary>
+        public void PublishMessage(string message)
         {
             var body = Encoding.UTF8.GetBytes(message);
 
             _channel.BasicPublish(exchange: string.Empty,
-                                routingKey: get_stock_quote_queue,
+                                routingKey: _queueName,
                                 basicProperties: null,
                                 body: body);
         }

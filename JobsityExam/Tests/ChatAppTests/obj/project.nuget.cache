@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RDj5WNLujbkvLzxa17YYLsoTRtBGcWLEw3DpMaBTp3jZlLMZsvmOPb4lZoohEJK3jrG+V9UM82xXIgFj/lT2EQ==",
+  "dgSpecHash": "iCcf/P+K1cqPwEGnJkILngsM/R727xTY/f3eWfcRHlhMkYI0i/Xb6B+bZNN32g24wTx23959LYpRoeN92518Lw==",
   "success": true,
-  "projectFilePath": "C:\\Pessoal\\JobsityExam\\JobsityExam\\Tests\\ChatAppTests\\ChatAppTests.csproj",
+  "projectFilePath": "C:\\Pessoal\\stockchat\\JobsityExam\\Tests\\ChatAppTests\\ChatAppTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gamorim\\.nuget\\packages\\coverlet.collector\\1.3.0\\coverlet.collector.1.3.0.nupkg.sha512",
     "C:\\Users\\gamorim\\.nuget\\packages\\justmock\\2020.3.1124.2\\justmock.2020.3.1124.2.nupkg.sha512",

@@ -6042,11 +6042,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Pessoal\\JobsityExam\\JobsityExam\\Tests\\ChatAppTests\\ChatAppTests.csproj",
+      "projectUniqueName": "C:\\Pessoal\\stockchat\\JobsityExam\\Tests\\ChatAppTests\\ChatAppTests.csproj",
       "projectName": "ChatAppTests",
-      "projectPath": "C:\\Pessoal\\JobsityExam\\JobsityExam\\Tests\\ChatAppTests\\ChatAppTests.csproj",
+      "projectPath": "C:\\Pessoal\\stockchat\\JobsityExam\\Tests\\ChatAppTests\\ChatAppTests.csproj",
       "packagesPath": "C:\\Users\\gamorim\\.nuget\\packages\\",
-      "outputPath": "C:\\Pessoal\\JobsityExam\\JobsityExam\\Tests\\ChatAppTests\\obj\\",
+      "outputPath": "C:\\Pessoal\\stockchat\\JobsityExam\\Tests\\ChatAppTests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -6066,8 +6066,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Pessoal\\JobsityExam\\JobsityExam\\Source\\ChatApplication\\ChatApplication.csproj": {
-              "projectPath": "C:\\Pessoal\\JobsityExam\\JobsityExam\\Source\\ChatApplication\\ChatApplication.csproj"
+            "C:\\Pessoal\\stockchat\\JobsityExam\\Source\\ChatApplication\\ChatApplication.csproj": {
+              "projectPath": "C:\\Pessoal\\stockchat\\JobsityExam\\Source\\ChatApplication\\ChatApplication.csproj"
             }
           }
         }

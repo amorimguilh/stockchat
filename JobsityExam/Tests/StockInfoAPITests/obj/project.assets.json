@@ -6042,11 +6042,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Pessoal\\JobsityExam\\JobsityExam\\Tests\\StockInfoAPITests\\StockInfoAPITests.csproj",
+      "projectUniqueName": "C:\\Pessoal\\stockchat\\JobsityExam\\Tests\\StockInfoAPITests\\StockInfoAPITests.csproj",
       "projectName": "StockInfoAPITests",
-      "projectPath": "C:\\Pessoal\\JobsityExam\\JobsityExam\\Tests\\StockInfoAPITests\\StockInfoAPITests.csproj",
+      "projectPath": "C:\\Pessoal\\stockchat\\JobsityExam\\Tests\\StockInfoAPITests\\StockInfoAPITests.csproj",
       "packagesPath": "C:\\Users\\gamorim\\.nuget\\packages\\",
-      "outputPath": "C:\\Pessoal\\JobsityExam\\JobsityExam\\Tests\\StockInfoAPITests\\obj\\",
+      "outputPath": "C:\\Pessoal\\stockchat\\JobsityExam\\Tests\\StockInfoAPITests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -6066,8 +6066,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Pessoal\\JobsityExam\\JobsityExam\\Source\\StockConsumer\\StockConsumer.csproj": {
-              "projectPath": "C:\\Pessoal\\JobsityExam\\JobsityExam\\Source\\StockConsumer\\StockConsumer.csproj"
+            "C:\\Pessoal\\stockchat\\JobsityExam\\Source\\StockConsumer\\StockConsumer.csproj": {
+              "projectPath": "C:\\Pessoal\\stockchat\\JobsityExam\\Source\\StockConsumer\\StockConsumer.csproj"
             }
           }
         }

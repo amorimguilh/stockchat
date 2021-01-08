@@ -14,6 +14,8 @@ namespace ChatApplication
 {
     public class Startup
     {
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -24,24 +26,32 @@ namespace ChatApplication
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSignalR();
-
-            services.AddCors(o => o.AddPolicy("CorsPolicy", builder =>
+            services.AddCors(options =>
             {
-                builder
-                .AllowAnyMethod()
-                .AllowAnyHeader()
-                .AllowCredentials()
-                .WithOrigins("http://localhost:4200");
-            }));
+                options.AddPolicy(
+                                name: MyAllowSpecificOrigins,
+                                builder =>
+                                {
+                                    builder
+                                    .AllowAnyMethod()
+                                    .AllowAnyHeader()
+                                    .AllowCredentials()
+                                    .SetIsOriginAllowed((host) => true);
+                                });
+            });
 
-            //var envVariable = Environment.GetEnvironmentVariable("RABBIT_MQ_HOST");
+            services.AddSignalR(conf => 
+            {
+                conf.EnableDetailedErrors = true;
+            });
 
-            //Thread.Sleep(8000);
+            var envVariable = Environment.GetEnvironmentVariable("RABBIT_MQ_HOST");
+
+            Thread.Sleep(8000);
 
             var factory = new ConnectionFactory()
             {
-                Uri = new Uri($"amqp://user:mysecretpassword@localhost:5672")
+                Uri = new Uri($"amqp://user:mysecretpassword@{envVariable}")
             };
 
             var channel = factory.CreateConnection().CreateModel();
@@ -50,11 +60,6 @@ namespace ChatApplication
             services.AddSingleton<IChatConfiguration, ChatConfiguration>();
             services.AddScoped<IQueueIntegration, RabbitMqIntegration>();
             services.AddControllers();
-            //services.AddCors(c =>
-            //{
-            //    c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
-            //});
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -65,21 +70,14 @@ namespace ChatApplication
                 app.UseDeveloperExceptionPage();
             }
 
-            //app.UseHttpsRedirection();
-
+            app.UseHttpsRedirection();
+            
             app.UseRouting();
+            
+            // UseCors adds the CORS middleware. The call to UseCors must be placed after UseRouting, but before UseAuthorization
+            app.UseCors(MyAllowSpecificOrigins);
 
             app.UseAuthorization();
-            app.UseCors("CorsPolicy");
-            //app.UseCors((builder) =>
-            //{
-            //    builder
-            //    .AllowAnyMethod()
-            //    .AllowAnyHeader()
-            //    //.AllowCredentials()
-            //    .SetIsOriginAllowed((host) => true)
-            //    .AllowAnyOrigin();
-            //});
 
             app.UseEndpoints(endpoints =>
             {

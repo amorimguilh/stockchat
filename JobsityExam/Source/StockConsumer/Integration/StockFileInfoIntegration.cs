@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace StockConsumer.Integration
 {
+    /// <summary>
+    /// Consumes an external service to retrieve a given stock price
+    /// </summary>
     public class StockFileInfoIntegration : IStockFileInfoIntegration
     {
         private static readonly string url = "https://stooq.com/q/l/?s={0}&f=sd2t2ohlcv&h&e=csv";
@@ -16,6 +19,10 @@ namespace StockConsumer.Integration
 
         }
 
+        /// <summary>
+        /// Consumes an external service to retrieve a given stock price in a csv format
+        /// then returns the file headers and lines
+        /// </summary>
         public async Task<(List<string> fileHeaders, List<string> fileContent)> GetStockInfoFile(string stock)
         {
             List<string> fileHeaders = null;
